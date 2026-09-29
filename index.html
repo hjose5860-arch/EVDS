@@ -1,4 +1,13 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B3FA6">
 <title>EVDS Serviços</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="description" content="Marido de aluguel em São Paulo capital: elétrica, hidráulica, montagem de móveis, pintura e pequenos reparos. Orçamento pelo WhatsApp.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
@@ -288,8 +297,13 @@ footer{background:var(--azul-esc);color:#BCCBEA;padding-block:52px 28px;font-siz
   .anima.pre{opacity:1;transform:none}
   .rev.anima.pre .estrelas svg,.porque div.pre::before{transform:none}
 }
+.logo-home{display:inline-block;transition:transform .2s}
+.logo-home:hover{transform:scale(1.05)}
+.logo-home:active{transform:scale(.96)}
 </style>
 
+</head>
+<body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="zap" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.6 11.6 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></symbol>
   <symbol id="raio" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 2 4 14h6.5L9 22l11-13h-7l.5-7Z"/></symbol>
@@ -304,7 +318,7 @@ footer{background:var(--azul-esc);color:#BCCBEA;padding-block:52px 28px;font-siz
 <div class="topbar"><div class="wrap"><span class="dot"></span><strong>Atendimento 24 horas</strong><span class="tb-sep">·</span><span>Todos os dias</span><span class="tb-sep">·</span><a href="https://wa.me/5511970414283" target="_blank" rel="noopener">(11) 97041-4283</a></div></div>
 <header>
   <div class="wrap topo">
-    <a href="#inicio" aria-label="EVDS Serviços, início"><img data-img="logo" alt="EVDS Serviços"></a>
+    <a class="logo-home" href="#inicio" aria-label="Voltar ao início"><img data-img="logo" alt="EVDS Serviços"></a>
     <nav>
       <a class="lk" href="#servicos">Serviços</a>
       <a class="lk" href="#como">Como funciona</a>
@@ -370,7 +384,7 @@ footer{background:var(--azul-esc);color:#BCCBEA;padding-block:52px 28px;font-siz
   <div class="wrap">
     <div class="cab">
       <div class="eyebrow">Por que a EVDS</div>
-      <h2>Um profissional só para resolver tudo</h2>
+      <h2>Tudo em um só lugar</h2>
     </div>
     <div class="porque">
       <div><h3>24 horas</h3><p>Madrugada, fim de semana ou feriado. Deu problema, pode chamar a qualquer hora.</p></div>
@@ -440,7 +454,7 @@ footer{background:var(--azul-esc);color:#BCCBEA;padding-block:52px 28px;font-siz
   <div class="wrap">
     <div class="rod">
       <div>
-        <div class="logo-box"><img data-img="logo" alt="EVDS Serviços"></div>
+        <a class="logo-box logo-home" href="#inicio" aria-label="Voltar ao início"><img data-img="logo" alt="EVDS Serviços"></a>
         <p style="max-width:32em;margin:16px 0">Marido de aluguel em São Paulo capital. Elétrica, hidráulica, montagem de móveis, pintura, instalações e pequenos reparos para casa e comércio.</p>
         <a class="tel" href="https://wa.me/5511970414283" target="_blank" rel="noopener">(11) 97041-4283</a>
         <a class="ig-rod" href="https://www.instagram.com/evdsservicos/" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>@evdsservicos</a>
@@ -711,4 +725,16 @@ rota();
   window.addEventListener("hashchange", function(){ render(); animar(document.getElementById("detalhe").hidden ? document.getElementById("home") : document.getElementById("detalhe")); });
   if (!det.hidden) animar(det);
 })();
+
+/* logo = voltar ao início */
+document.querySelectorAll(".logo-home").forEach(function(a){
+  a.addEventListener("click", function(e){
+    e.preventDefault();
+    if (location.hash && location.hash !== "#inicio") { location.hash = "inicio"; }
+    else { window.scrollTo({top: 0, behavior: "smooth"}); }
+  });
+});
 </script>
+
+</body>
+</html>
